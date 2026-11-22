@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: #75695d;
+    --color-primary-dark: #5d5348;
+    --color-primary-light: #98897a;
+    --color-bg: #f7f5f1;
+    --color-bg-alt: #efece6;
+    --color-surface: #fffefc;
+    --color-text: #3a342e;
+    --color-text-muted: #8a8076;
+    --color-line: #e2ddd4;
+    --font-ar: 'Cairo', system-ui, sans-serif;
+    --font-en: 'Cormorant Garamond', 'Cairo', serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-[#f7f5f1] text-[#3a342e] antialiased;
+    font-family: var(--font-ar);
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-medium;
+    line-height: 1.2;
+  }
+
+  .font-en {
+    font-family: var(--font-en);
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn-whatsapp {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-[#75695d] px-7 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:bg-[#5d5348] hover:shadow-md;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-[#75695d]/40 px-7 py-3 text-sm font-semibold text-[#75695d] transition-all duration-300 hover:border-[#75695d] hover:bg-[#75695d]/5;
+  }
+
+  .section-label {
+    @apply mb-3 text-sm font-semibold tracking-widest text-[#75695d];
+  }
+}
+
+@layer utilities {
+  .marble-grain {
+    background-image:
+      radial-gradient(ellipse at 20% 15%, rgba(255, 255, 255, 0.7), transparent 45%),
+      radial-gradient(ellipse at 75% 30%, rgba(255, 255, 255, 0.35), transparent 40%),
+      radial-gradient(ellipse at 40% 70%, rgba(255, 255, 255, 0.3), transparent 45%),
+      radial-gradient(ellipse at 85% 80%, rgba(255, 255, 255, 0.25), transparent 40%);
+  }
+
+  .marble-veins {
+    background-image:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='0.35'%3E%3Cpath d='M0 80 Q100 60 180 110 T400 90' stroke-width='2'/%3E%3Cpath d='M0 180 Q120 150 210 200 T400 175' stroke-width='1.5'/%3E%3Cpath d='M0 280 Q90 260 190 310 T400 290' stroke-width='2'/%3E%3Cpath d='M60 0 Q80 120 40 220 T90 400' stroke-width='1'/%3E%3Cpath d='M250 0 Q270 140 230 260 T280 400' stroke-width='1.5'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: cover;
+  }
+}
